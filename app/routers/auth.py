@@ -8,6 +8,8 @@ from app.models.users import Token, UserCreate, UserResponse, RegisterResponse, 
 
 router = APIRouter()
 
+#testing
+
 @router.post("/register", response_model=AuthResponse, status_code=status.HTTP_201_CREATED)
 async def register(user: UserCreate):
     """Register a new user and return user info with access token"""
