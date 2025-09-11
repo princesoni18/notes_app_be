@@ -1,4 +1,4 @@
-# for seting up backend 
+# for setting up backend 
 ```bash
 git clone 
 python -m venv venv
