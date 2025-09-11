@@ -33,3 +33,13 @@ app.include_router(notes.router, prefix="/api/notes", tags=["Notes"])
 @app.get("/")
 async def root():
     return {"message": "Welcome to Notes API"}
+
+
+@app.get("/api/health")
+def health_check():
+    return {"status": "healthy"}
+
+# This is important for Vercel
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
