@@ -20,6 +20,8 @@ db_instance = Database()
 
 async def connect_to_mongo():
     try:
+        logger.info(f"MongoDB DB Name: {MONGODB_DB}")
+        logger.info(f"MongoDB Password: {MONGODB_PASSWORD}")
         db_instance.client = AsyncIOMotorClient(MONGODB_URL)
         db_instance.db = db_instance.client[MONGODB_DB]
         logger.info(f"Connected to MongoDB database: {MONGODB_DB}")
@@ -34,4 +36,5 @@ async def close_mongo_connection():
 
 async def get_db():
     logger.info("Database instance accessed.")
+    logger.info(f"MongoDB DB password: {MONGODB_PASSWORD}")
     return db_instance.db
